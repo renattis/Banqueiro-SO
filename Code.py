@@ -77,17 +77,17 @@ def imprimir_os_dados(recursos_totais, matriz_alocados, recursos_alocados, recur
 
 def algoritmo_banqueiro(qtd_processos,qtd_tipos_recursos, recursos_disponiveis, matriz_recursos_necessarios, matriz_alocados):
 
-    # Vetor com 1's em cada processo, indicando se este ainda irá rodar (n = 1) ou não (n = 0)
+    
 
     rodando = np.ones(qtd_processos, dtype='int64')
 
-    # enquanto a quantidade de números diferentes de 0 for maior do que 0, a linha de código do while irá rodar
+    
 
     while np.count_nonzero(rodando) > 0:
         alocou_recursos = False
         for num_processo in range(qtd_processos):
 
-            # se o processo de índice "num_processo" irá rodar ou não
+           
 
             if rodando[num_processo] != 0:
                 if all(i >= 0 for i in recursos_disponiveis - (matriz_recursos_necessarios[num_processo] - matriz_alocados[num_processo])):
